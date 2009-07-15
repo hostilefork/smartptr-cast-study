@@ -29,7 +29,7 @@ public:
  
 		// Initializers work for shared pointers (unlike std::auto_ptr)
 		std::unique_ptr<Derived> dptr3 (new Derived(3));
-                std::unique_ptr<Base> bptrInitialized = move(dptr3);
+		std::unique_ptr<Base> bptrInitialized = move(dptr3);
  
 		// ...AND function arguments work too (unlike std::auto_ptr)
 		std::unique_ptr<Derived> dptr4 (new Derived(4));

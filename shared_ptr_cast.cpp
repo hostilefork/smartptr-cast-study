@@ -28,18 +28,18 @@ public:
 		std::tr1::shared_ptr<Base> bptrAssigned;
 		bptrAssigned = dptr2;
  
-                // Initializers work for shared pointers (unlike std::auto_ptr)
-                std::tr1::shared_ptr<Derived> dptr3 (new Derived(3));
-                std::tr1::shared_ptr<Base> bptrInitialized = dptr3;
+		// Initializers work for shared pointers (unlike std::auto_ptr)
+		std::tr1::shared_ptr<Derived> dptr3 (new Derived(3));
+		std::tr1::shared_ptr<Base> bptrInitialized = dptr3;
  
-                // ...AND function arguments work too (unlike std::auto_ptr)
-                std::tr1::shared_ptr<Derived> dptr4 (new Derived(4));
-                BaseFunction(dptr4);
-        }
- };
+		// ...AND function arguments work too (unlike std::auto_ptr)
+		std::tr1::shared_ptr<Derived> dptr4 (new Derived(4));
+		BaseFunction(dptr4);
+	}
+};
  
- int main() {
-        Derived d (0);
-        d.SomeMethod();
-        return 1;
+int main() {
+	Derived d (0);
+	d.SomeMethod();
+	return 1;
 }
