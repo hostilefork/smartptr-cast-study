@@ -27,18 +27,18 @@ public:
 		std::unique_ptr<Base> bptrAssigned;
 		bptrAssigned = move(dptr2);
  
-                // Initializers work for shared pointers (unlike std::auto_ptr)
-                std::unique_ptr<Derived> dptr3 (new Derived(3));
+		// Initializers work for shared pointers (unlike std::auto_ptr)
+		std::unique_ptr<Derived> dptr3 (new Derived(3));
                 std::unique_ptr<Base> bptrInitialized = move(dptr3);
  
-                // ...AND function arguments work too (unlike std::auto_ptr)
-                std::unique_ptr<Derived> dptr4 (new Derived(4));
-                BaseFunction(move(dptr4));
-        }
- };
+		// ...AND function arguments work too (unlike std::auto_ptr)
+		std::unique_ptr<Derived> dptr4 (new Derived(4));
+		BaseFunction(move(dptr4));
+	}
+};
  
- int main() {
-        Derived d (0);
-        d.SomeMethod();
-        return 1;
+int main() {
+	Derived d (0);
+	d.SomeMethod();
+	return 1;
 }
